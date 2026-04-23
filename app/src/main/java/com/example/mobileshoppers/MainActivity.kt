@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     // Balance randomization and items logic will be contained within the companion obj
     companion object {
         // Give a random balance var between 0 and 1500
+        var balance: Int = (0..1500).random()
 
         // Create a list of 32 items
         val shoppingList = listOf(
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Randomly pick 8 items to display on "shelves" for the user this session
-        var storeItems = shoppingList.shuffled().take(8)
+        var storeItems = shoppingList.shuffled().take(7)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +76,10 @@ class MainActivity : AppCompatActivity() {
                 if (balance >= itemData.price)
                 {
                     // Deduct the price from the balance & update the money
-                    //
-                    //
+                    balance -= itemData.price
+
+                    //Update UI
+                    balanceView.text = "Balance: $${balance}"
 
                     // Update the Transaction History
                     historyView?.append("\n- Bought ${itemData.name} for $${itemData.price}")
