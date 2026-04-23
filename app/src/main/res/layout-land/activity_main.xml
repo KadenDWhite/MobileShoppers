@@ -3,26 +3,313 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#121212"> <TextView
-    android:id="@+id/comingSoonText"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="STORE FRONT\nCOMING SOON"
-    android:textAlignment="center"
-    android:textColor="#BB86FC" android:textSize="30sp"
-    android:textStyle="bold"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
+    android:background="#D3D3D3"
+    android:padding="16dp">
 
-    <ProgressBar
-        style="?android:attr/progressBarStyle"
+    <TextView
+        android:id="@+id/storeTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="108dp"
+        android:text="@string/electronic_shop"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/comingSoonText" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/balanceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/balance_0"
+        android:textColor="#4CAF50"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/shelfCase"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/shelf_border"
+        app:layout_constraintBottom_toBottomOf="@+id/itemGrid"
+        app:layout_constraintEnd_toEndOf="@+id/itemGrid"
+        app:layout_constraintStart_toStartOf="@+id/itemGrid"
+        app:layout_constraintTop_toTopOf="@+id/itemGrid" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@+id/shelfCase"
+        app:layout_constraintEnd_toEndOf="@+id/shelfCase"
+        app:layout_constraintStart_toStartOf="@+id/shelfCase"
+        app:layout_constraintTop_toTopOf="@+id/shelfCase"
+        app:layout_constraintVertical_bias=".5"/>
+
+    <GridLayout
+        android:id="@+id/itemGrid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:alignmentMode="alignMargins"
+        android:columnCount="4"
+        android:columnOrderPreserved="false"
+        android:padding="16dp"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/storeTitle">
+
+        <LinearLayout
+            android:id="@+id/containerItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#2196F3" />
+
+            <TextView
+                android:id="@+id/labelItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#FFEB3B" />
+
+            <TextView
+                android:id="@+id/labelItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#FF9800" />
+
+            <TextView
+                android:id="@+id/labelItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#9C27B0" />
+
+            <TextView
+                android:id="@+id/labelItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#DB0808" />
+
+            <TextView
+                android:id="@+id/labelItem6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#4CAF50" />
+
+            <TextView
+                android:id="@+id/labelItem7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#B67136" />
+
+            <TextView
+                android:id="@+id/labelItem8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/containerItem9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#FFB5F1" />
+
+            <TextView
+                android:id="@+id/labelItem9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </GridLayout>
+
+    <ScrollView
+        android:id="@+id/historyScroll"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balanceText">
+
+        <TextView
+            android:id="@+id/transactionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/recent_transactions_n"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

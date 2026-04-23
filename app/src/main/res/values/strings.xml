@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Mobile Shoppers</string>
+    <string name="balance_0">Balance: $0</string>
+    <string name="electronic_shop"><u>ELECTRONIC SHOP</u></string>
+    <string name="recent_transactions_n">Recent Transactions:\n---</string>
+    <string name="item_name_n_0">Item Name\n$0</string>
 </resources>
