@@ -178,6 +178,34 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/containerItem5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="9dp">
+
+            <ImageButton
+                android:id="@+id/item5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:background="@drawable/item_background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_item"
+                app:tint="#DB0808" />
+
+            <TextView
+                android:id="@+id/labelItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_name_n_0"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
             android:id="@+id/containerItem6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -192,7 +220,7 @@
                 android:background="@drawable/item_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_item"
-                app:tint="#DB0808" />
+                app:tint="#4CAF50" />
 
             <TextView
                 android:id="@+id/labelItem6"
@@ -220,7 +248,7 @@
                 android:background="@drawable/item_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_item"
-                app:tint="#4CAF50" />
+                app:tint="#B67136" />
 
             <TextView
                 android:id="@+id/labelItem7"
@@ -248,38 +276,10 @@
                 android:background="@drawable/item_background"
                 android:scaleType="fitCenter"
                 android:src="@drawable/ic_item"
-                app:tint="#B67136" />
-
-            <TextView
-                android:id="@+id/labelItem8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/item_name_n_0"
-                android:textAlignment="center"
-                android:textColor="#FFFFFF"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/containerItem9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="9dp">
-
-            <ImageButton
-                android:id="@+id/item9"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:background="@drawable/item_background"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_item"
                 app:tint="#FFB5F1" />
 
             <TextView
-                android:id="@+id/labelItem9"
+                android:id="@+id/labelItem8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/item_name_n_0"
