@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Randomly pick 8 items to display on "shelves" for the user this session
-        var storeItems = shoppingList.shuffled().take(7)
+        var storeItems = shoppingList.shuffled().take(8)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
             Pair(findViewById<LinearLayout>(R.id.containerItem2), findViewById<TextView>(R.id.labelItem2)),
             Pair(findViewById<LinearLayout>(R.id.containerItem3), findViewById<TextView>(R.id.labelItem3)),
             Pair(findViewById<LinearLayout>(R.id.containerItem4), findViewById<TextView>(R.id.labelItem4)),
+            Pair(findViewById<LinearLayout>(R.id.containerItem5), findViewById<TextView>(R.id.labelItem5)),
             Pair(findViewById<LinearLayout>(R.id.containerItem6), findViewById<TextView>(R.id.labelItem6)),
             Pair(findViewById<LinearLayout>(R.id.containerItem7), findViewById<TextView>(R.id.labelItem7)),
             Pair(findViewById<LinearLayout>(R.id.containerItem8), findViewById<TextView>(R.id.labelItem8))
