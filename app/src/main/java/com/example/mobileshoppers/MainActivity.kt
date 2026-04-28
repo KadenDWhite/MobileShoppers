@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         // Give a random balance var between 0 and 1500
         var balance: Int = (0..1500).random()
 
-        // Create a list of 32 items
+        // Create a list of 33 items
         val shoppingList = listOf(
             ShopItem("Gaming PC", 1200), ShopItem("Smartphone", 800), ShopItem("Smart Watch", 250),
             ShopItem("Bluetooth Mic", 150), ShopItem("4K Monitor", 400), ShopItem("Drone", 900),
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             ShopItem("Smart Light", 30), ShopItem("Game Console", 499), ShopItem("Fitness Tracker", 110),
             ShopItem("USB-C Hub", 45), ShopItem("Microphone", 190), ShopItem("Electric Scooter", 600),
             ShopItem("Laptop Stand", 40), ShopItem("External HD", 100), ShopItem("Smart Plug", 25),
-            ShopItem("Trackpad", 130), ShopItem("Action Cam", 280)
+            ShopItem("Trackpad", 130), ShopItem("Action Cam", 280), ShopItem("Air", price = 0)
         )
 
         // Randomly pick 8 items to display on "shelves" for the user this session
