@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
     // Use a companion object to keep our money and items saved even if the screen rotates
     // Balance randomization and items logic will be contained within the companion obj
     companion object {
-        // Give a random balance var between 0 and 1500
-        var balance: Int = (0..1500).random()
+        // Give a random balance var between 0 and 2500
+        var balance: Int = (0..2500).random()
 
         // Create a list of 33 items
         val shoppingList = listOf(
