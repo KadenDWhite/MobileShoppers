@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
             ShopItem("VR Headset", 200), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 55),
             ShopItem("Tablet", 350), ShopItem("DSLR Camera", 550), ShopItem("Smart Speaker", 50),
             ShopItem("Graphics Card", 500), ShopItem("SSD 2TB", 150), ShopItem("E-Reader", 45),
-            ShopItem("Webcam", 65), ShopItem("Router", 145), ShopItem("Power Bank", 40),
+            ShopItem("Webcam", 69), ShopItem("Router", 145), ShopItem("Power Bank", 40),
             ShopItem("Projector", 450), ShopItem("Soundbar", 300), ShopItem("Headphones", 220),
             ShopItem("Smart Light", 20), ShopItem("Game Console", 400), ShopItem("Fitness Tracker", 85),
             ShopItem("USB-C Hub", 30), ShopItem("Microphone", 200), ShopItem("Electric Scooter", 600),
