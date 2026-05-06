@@ -22,19 +22,25 @@ class MainActivity : AppCompatActivity() {
         val shoppingList = listOf(
             ShopItem("Gaming PC", 1200), ShopItem("Smartphone", 800), ShopItem("Smart Watch", 250),
             ShopItem("Bluetooth Mic", 150), ShopItem("4K Monitor", 400), ShopItem("Drone", 900),
-            ShopItem("VR Headset", 500), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 80),
+            ShopItem("VR Headset", 500), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 55),
             ShopItem("Tablet", 350), ShopItem("DSLR Camera", 1100), ShopItem("Smart Speaker", 60),
-            ShopItem("Graphics Card", 700), ShopItem("SSD 2TB", 180), ShopItem("E-Reader", 130),
-            ShopItem("Webcam", 90), ShopItem("Router", 200), ShopItem("Power Bank", 50),
+            ShopItem("Graphics Card", 700), ShopItem("SSD 2TB", 180), ShopItem("E-Reader", 95),
+            ShopItem("Webcam", 65), ShopItem("Router", 130), ShopItem("Power Bank", 40),
             ShopItem("Projector", 450), ShopItem("Soundbar", 300), ShopItem("Headphones", 220),
-            ShopItem("Smart Light", 30), ShopItem("Game Console", 499), ShopItem("Fitness Tracker", 110),
-            ShopItem("USB-C Hub", 45), ShopItem("Microphone", 190), ShopItem("Electric Scooter", 600),
-            ShopItem("Laptop Stand", 40), ShopItem("External HD", 100), ShopItem("Smart Plug", 25),
+            ShopItem("Smart Light", 20), ShopItem("Game Console", 499), ShopItem("Fitness Tracker", 85),
+            ShopItem("USB-C Hub", 30), ShopItem("Microphone", 190), ShopItem("Electric Scooter", 600),
+            ShopItem("Laptop Stand", 25), ShopItem("External HD", 100), ShopItem("Smart Plug", 15),
             ShopItem("Trackpad", 130), ShopItem("Action Cam", 280), ShopItem("Air", price = 0)
         )
 
         // Randomly pick 8 items to display on "shelves" for the user this session
         var storeItems = shoppingList.shuffled().take(8)
+
+        // Keep track of the text in history so it doesn't vanish when swapping view states
+        var currentHistory: String = "Recent Transactions:"
+
+        // Keep track of which of the 8 items have been bought (by their index 0-7)
+        var purchasedIndices = mutableSetOf<Int>()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,7 +58,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupShop(balanceView: TextView){
         val historyView = findViewById<TextView>(R.id.transactionText)
+
         balanceView.text = "Balance: $${balance}"
+        historyView?.text = currentHistory
 
         // Connecting the XML layout slots to our logic
         // Note: This will use the IDs from the previous XML snippets (item1, item2, etc.)
@@ -72,6 +80,11 @@ class MainActivity : AppCompatActivity() {
             // Set the text for the item name and price
             label?.text = "${itemData.name}\n$${itemData.price}"
 
+            // If this item was already bought before rotation, hide it immediately
+            if (purchasedIndices.contains(index)){
+                container?.visibility = View.GONE
+            }
+
             // Set the click listener for the item
             container?.setOnClickListener {
                 if (balance >= itemData.price)
@@ -79,14 +92,21 @@ class MainActivity : AppCompatActivity() {
                     // Deduct the price from the balance & update the money
                     balance -= itemData.price
 
-                    //Update UI
-                    balanceView.text = "Balance: $${balance}"
+                    // Update state in Companion Object
+                    purchasedIndices.add(index)
+                    currentHistory += "\nBought ${itemData.name} for $${itemData.price}"
 
-                    // Update the Transaction History
-                    historyView?.append("\n- Bought ${itemData.name} for $${itemData.price}")
+                    // Update UI
+                    balanceView.text = "Balance: $${balance}"
+                    historyView?.text = currentHistory
 
                     // Run the Pulse & Vanish Animations
                     animatePurchase(container)
+                }
+                if (purchasedIndices.size == 8){
+                    Toast.makeText(this, "Congratulations! You've cleared the store!", Toast.LENGTH_SHORT).show()
+                    // Optional: Update the balance text to show a victory message
+                    balanceView.text = "SHOP CLEARED!"
                 }
                 else
                 {
