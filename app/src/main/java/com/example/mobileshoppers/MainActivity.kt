@@ -102,11 +102,12 @@ class MainActivity : AppCompatActivity() {
 
                     // Run the Pulse & Vanish Animations
                     animatePurchase(container)
-                }
-                if (purchasedIndices.size == 8){
-                    Toast.makeText(this, "Congratulations! You've cleared the store!", Toast.LENGTH_SHORT).show()
-                    // Optional: Update the balance text to show a victory message
-                    balanceView.text = "SHOP CLEARED!"
+
+                    if (purchasedIndices.size == 8){
+                        Toast.makeText(this, "Congratulations! You've cleared the store!", Toast.LENGTH_SHORT).show()
+                        // Optional: Update the balance text to show a victory message
+                        balanceView.text = "SHOP CLEARED!"
+                    }
                 }
                 else
                 {
