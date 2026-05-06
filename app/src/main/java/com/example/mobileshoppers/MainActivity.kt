@@ -18,26 +18,27 @@ class MainActivity : AppCompatActivity() {
         // Give a random balance var between 0 and 2500
         var balance: Int = (0..2500).random()
 
-        // Create a list of 33 items
+        // Create a list of 36 possible items
         val shoppingList = listOf(
             ShopItem("Gaming PC", 1200), ShopItem("Smartphone", 800), ShopItem("Smart Watch", 250),
-            ShopItem("Bluetooth Mic", 150), ShopItem("4K Monitor", 400), ShopItem("Drone", 900),
-            ShopItem("VR Headset", 500), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 55),
-            ShopItem("Tablet", 350), ShopItem("DSLR Camera", 1100), ShopItem("Smart Speaker", 60),
-            ShopItem("Graphics Card", 700), ShopItem("SSD 2TB", 180), ShopItem("E-Reader", 95),
-            ShopItem("Webcam", 65), ShopItem("Router", 130), ShopItem("Power Bank", 40),
+            ShopItem("Bluetooth Mic", 150), ShopItem("4K Monitor", 400), ShopItem("Drone", 1000),
+            ShopItem("VR Headset", 200), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 55),
+            ShopItem("Tablet", 350), ShopItem("DSLR Camera", 550), ShopItem("Smart Speaker", 50),
+            ShopItem("Graphics Card", 500), ShopItem("SSD 2TB", 150), ShopItem("E-Reader", 45),
+            ShopItem("Webcam", 65), ShopItem("Router", 145), ShopItem("Power Bank", 40),
             ShopItem("Projector", 450), ShopItem("Soundbar", 300), ShopItem("Headphones", 220),
-            ShopItem("Smart Light", 20), ShopItem("Game Console", 499), ShopItem("Fitness Tracker", 85),
-            ShopItem("USB-C Hub", 30), ShopItem("Microphone", 190), ShopItem("Electric Scooter", 600),
+            ShopItem("Smart Light", 20), ShopItem("Game Console", 400), ShopItem("Fitness Tracker", 85),
+            ShopItem("USB-C Hub", 30), ShopItem("Microphone", 200), ShopItem("Electric Scooter", 600),
             ShopItem("Laptop Stand", 25), ShopItem("External HD", 100), ShopItem("Smart Plug", 15),
-            ShopItem("Trackpad", 130), ShopItem("Action Cam", 280), ShopItem("Air", price = 0)
+            ShopItem("Trackpad", 100), ShopItem("Action Cam", 280), ShopItem("Air", price = 0),
+            ShopItem("AirPods", 150), ShopItem("Gum", price = 5), ShopItem("Paper", price = 10)
         )
 
         // Randomly pick 8 items to display on "shelves" for the user this session
         var storeItems = shoppingList.shuffled().take(8)
 
         // Keep track of the text in history so it doesn't vanish when swapping view states
-        var currentHistory: String = "Recent Transactions:"
+        var currentHistory: String = "Recent Transactions: \n"
 
         // Keep track of which of the 8 items have been bought (by their index 0-7)
         var purchasedIndices = mutableSetOf<Int>()
@@ -115,8 +116,7 @@ class MainActivity : AppCompatActivity() {
                     val msg = if (balance == 0) "Balance is $0! Go find some coins." else "Too expensive!"
                     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
                 }
-            }
-
+                }
             }
         }
 
