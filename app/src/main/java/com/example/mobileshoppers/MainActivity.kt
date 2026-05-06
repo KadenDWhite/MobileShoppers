@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
         // Create a list of 36 possible items
         val shoppingList = listOf(
-            ShopItem("Gaming PC", 1200), ShopItem("Smartphone", 800), ShopItem("Smart Watch", 250),
+            ShopItem("Gaming PC", 2200), ShopItem("Smartphone", 800), ShopItem("Smart Watch", 250),
             ShopItem("Bluetooth Mic", 150), ShopItem("4K Monitor", 400), ShopItem("Drone", 1000),
             ShopItem("VR Headset", 200), ShopItem("Mechanical KB", 120), ShopItem("Gaming Mouse", 55),
             ShopItem("Tablet", 350), ShopItem("DSLR Camera", 550), ShopItem("Smart Speaker", 50),
